@@ -19,4 +19,9 @@ function printon(data){
 	document.getElementById('js-csv').innerHTML = articles;
 }
 
-printon(loadCSVData());
+function run(){
+	var data = loadCSVData();
+	printon(data);
+}
+
+run();
