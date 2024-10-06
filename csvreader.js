@@ -10,17 +10,23 @@ function printon(data){
 	const articles = data.slice(1)
 		.map(x => `
 			<article>
-				<h3>planet ${x[8]}</h3>
-				<p>${x[5]}, ${x[6]}, ${x[7]}</p>
-				<p>${parseFloat(x[5])+parseFloat(x[6])+parseFloat(x[7])} </p>
+				<h3>planet ${x.name}</h3>
+				<p>${x.x}, ${x.y}, ${x.z}</p>
 			</article>
 		`)
-		.join(';');
+		.join('');
 	document.getElementById('js-csv').innerHTML = articles;
 }
 
 function run(){
 	var data = await loadCSVData();
+	var stars = data.map(x=>{
+		name: x[8],
+		x: parseFloat(x[5]),
+		y: parseFloat(x[6]),
+		z: parseFloat(x[7])
+	}
+	)
 	printon(data);
 }
 
