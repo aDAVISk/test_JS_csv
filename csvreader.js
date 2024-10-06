@@ -20,7 +20,7 @@ function printon(data){
 
 function run(){
 	var data = await loadCSVData();
-	var stars = data.map(x=>{
+	var stars = data.slice(1).map(x=>{
 		name: x[8],
 		x: parseFloat(x[5]),
 		y: parseFloat(x[6]),
