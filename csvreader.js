@@ -20,7 +20,7 @@ function printon(data){
 }
 
 function run(){
-	var data = loadCSVData();
+	var data = await loadCSVData();
 	printon(data);
 }
 
